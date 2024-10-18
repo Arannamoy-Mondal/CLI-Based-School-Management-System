@@ -9,7 +9,8 @@ class School:
     def add_teacher(self,subject,teacher):
         self.teachers[subject]=teacher
     def student_admission(self,student):
-        pass
+        className=student.classroom
+        self.classrooms[className].add_student(student)
     @staticmethod
     def calculate_grade(marks):
         if marks>=80 and marks<=100:
@@ -56,5 +57,19 @@ class School:
             return 'F'
         
     def __repr__(self):
-        pass
+        for key in self.classrooms.keys():
+            print(key)
+        print("All students")
+        result=''
+        for key,value in self.classrooms.items():
+            result+=f'{key.upper()} classroom student'
+            for student in value.students:
+                result+=f'{student.name}'
+        print(result)
+        subject=''
+        for key,value in self.classrooms.items():
+            subject+=f'{key.upper()} classroom subject'
+            for sub in value.subject:
+                subject+=f'{sub.name}'
+        print(subject)
         

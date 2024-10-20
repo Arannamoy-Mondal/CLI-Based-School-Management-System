@@ -57,19 +57,30 @@ class School:
             return 'F'
         
     def __repr__(self):
+        # All classroom
         for key in self.classrooms.keys():
             print(key)
+        #All students
         print("All students")
         result=''
         for key,value in self.classrooms.items():
-            result+=f'{key.upper()} classroom student'
+            result+=f'{key.upper()} Classroom Students'
             for student in value.students:
                 result+=f'{student.name}'
         print(result)
+        #Subject
         subject=''
         for key,value in self.classrooms.items():
             subject+=f'{key.upper()} classroom subject'
             for sub in value.subject:
                 subject+=f'{sub.name}'
         print(subject)
+
+        #Print student result
+        for key,value in self.classrooms.items():
+            for student in value.students:
+                for k,i in student.marks.items():
+                    print(student.name,k,i,student.subject_grade[k])
+                print(student.calculate_final_grade())
+        return ''
         

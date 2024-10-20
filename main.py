@@ -16,7 +16,7 @@ school.add_classroom(ten)
 
 std1=Student('Std1',eight)
 std2=Student('Std2',nine)
-std3=Student('Std',ten)
+std3=Student('Std3',ten)
 std4=Student('Std4',ten)
 std5=Student('Std5',nine)
 
@@ -41,18 +41,8 @@ sub3=Subject('Chemistry',t3)
 sub4=Subject('Botany',t4)   
 
 eight.add_subjects(sub1)
-eight.add_student(sub2)
-eight.add_student(sub3)
-eight.add_subjects(sub4)
-
-
-nine.add_subjects(sub1)
-nine.add_student(sub2)
-nine.add_student(sub3)
-nine.add_subjects(sub4)
-
-
-ten.add_subjects(sub1)
-ten.add_student(sub2)
-ten.add_student(sub3)
-ten.add_subjects(sub4)
+eight.add_subjects(sub2)
+nine.add_subjects(sub3)
+nine.take_semester_final_exam()
+eight.take_semester_final_exam()
+print(school)
